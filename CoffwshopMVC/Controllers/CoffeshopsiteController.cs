@@ -1,11 +1,58 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CoffwshopMVC.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using CoffwshopMVC.Repository;
+using CoffwshopMVC.Models;
 
 namespace CoffwshopMVC.Controllers
 {
     public class CoffeshopsiteController : Controller
     {
         // GET: CoffeshopsiteController
+
+
+
+        ReservationTable ObjRepository;
+
+        public CoffeshopsiteController()
+        {
+            ObjRepository = new ReservationTable();
+        }
+
+
+
+        public ActionResult List()
+        {
+            return View("ReservatioTable", ObjRepository.Select());
+        }
+
+
+
+
+        // GET: PersonalDataController/Create
+        public ActionResult InsertRecord()
+        {
+            return View("Reservation", new ReservationModel());
+        }
+
+        // POST: PersonalDataController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ReservationModel data)
+        {
+            try
+            {
+                ObjRepository.InsertPersonalData(data);
+                return RedirectToAction();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+
 
         public ActionResult About()
         {
@@ -18,11 +65,35 @@ namespace CoffwshopMVC.Controllers
             return View();
         }
 
-
-        public ActionResult Index()
+        public ActionResult menu()
         {
             return View();
         }
+
+        public ActionResult Reservation()
+        {
+            return View();
+        }
+
+        public ActionResult Service()
+        {
+            return View();
+        }
+
+        public ActionResult Testimonial()
+        {
+            return View();
+        }
+
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+
+
+        
 
         // GET: CoffeshopsiteController/Details/5
         public ActionResult Details(int id)

@@ -30,7 +30,32 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Coffeshopsite" asp-action="About">About US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Coffeshopsite" asp-action="menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Coffeshopsite" asp-action="List">Reserved List</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Coffeshopsite" asp-action="Reservation">Reservation Table</a>
+                        </li>
+
+
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Coffeshopsite" asp-action="Service">Service</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Coffeshopsite" asp-action="Testimonial">Testimonial</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Coffeshopsite" asp-action="Contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -45,12 +70,13 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - CoffwshopMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            CoffwshopMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
